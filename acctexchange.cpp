@@ -81,7 +81,7 @@ void acctexchange::buyacct(account_name buyer, account_name target, extended_ass
     // Updates account owner permission
 
     vector<key_weight> owner_keys;
-    owner_keys.push_back({public_key{0, pub_key_payload}, 1});
+    owner_keys.push_back({public_key_data{0, pub_key_payload}, 1});
     updateauth_args owner{
         target, N(owner), 0,
         authority{1, 0, owner_keys, vector<permission_level_weight>()}};
@@ -91,7 +91,7 @@ void acctexchange::buyacct(account_name buyer, account_name target, extended_ass
     // Updates account active permission
 
     vector<key_weight> active_keys;
-    active_keys.push_back({public_key{0, pub_key_payload}, 1});
+    active_keys.push_back({public_key_data{0, pub_key_payload}, 1});
     updateauth_args active{
         target, N(active), N(owner),
         authority{1, 0, active_keys, vector<permission_level_weight>()}};

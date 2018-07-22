@@ -22,7 +22,7 @@ struct assertowner_args
     account_name acct;
 };
 
-struct public_key
+struct public_key_data
 {
     uint8_t type;
     array<unsigned char, 33> data;
@@ -36,7 +36,7 @@ struct permission_level_weight
 
 struct key_weight
 {
-    public_key key;
+    public_key_data key;
     weight_type weight;
 };
 
@@ -128,7 +128,7 @@ extern "C"
         {
             switch (action)
             {
-                EOSIO_API(acctexchange, (listforsale)(delistacct)(adjustfee)(removesale)(assertowner))
+                EOSIO_API(acctexchange, (listforsale)(delistacct)(buyacct)(withdraw)(adjustfee)(removesale)(assertowner))
             }
         }
         else

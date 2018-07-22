@@ -65,7 +65,7 @@ class acctexchange : public contract
 
     acctexchange(account_name self) : contract(self), forsales(self, self) {}
 
-    /// @table forsales
+    /// @abi table forsales
     struct forsale
     {
         account_name acct;
@@ -75,7 +75,7 @@ class acctexchange : public contract
         auto primary_key() const { return acct; }
     };
 
-    /// @table balances
+    /// @abi table balances
     struct user_balance
     {
         account_name user;

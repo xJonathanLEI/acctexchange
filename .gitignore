@@ -1,0 +1,7 @@
+# VS Code Files
+.vscode/
+
+# Compiled Files
+*.wast
+*.wasm
+*.abi
